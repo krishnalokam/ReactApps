@@ -1,0 +1,8 @@
+/*
+Var has function scope
+
+Let has block scope
+
+const has block scope
+
+*/
