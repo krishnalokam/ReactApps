@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrow functions Demo</h1>
+    <button id="btn">ClickMe!</button>
+    <p> <em>this</em> represents: </p>
+    <div id="demo"></div>
+    <script>
+        class Header {
+            constructor(){
+                this.color = "Red";
+            }
+
+            // changeColor = function() {
+            //     alert(this);
+            //     document.getElementById('demo').innerHTML += this;
+            // }
+            
+            //using Arrow functions
+            changeColor = () => {
+                alert(this);
+                document.getElementById("demo").innerHTML += this;
+            }
+        }
+        const myHeader = new Header();
+        window.addEventListener('load',myHeader.changeColor);
+
+        document.getElementById('btn').addEventListener("click",myHeader.changeColor);
+
+    </script>
+</body>
+</html>
