@@ -8,7 +8,7 @@ const Timer = ({time}) => {
 
 const styles = {
     timerStyle:{
-        width:"25%",
+        // width:"25%",
         margin:"10px auto",
         padding:"8px",
         border: "1px solid black",

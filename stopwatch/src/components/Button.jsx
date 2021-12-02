@@ -1,8 +1,8 @@
 import React from "react";
 
-const Button = ({name,handleClicked}) => {
+const Button = ({name,handleClicked,display}) => {
     return(
-        <div>
+        <div style={{display:display}}>
             <button style={styles.buttonStyle} type="button" onClick={handleClicked}>{name}</button>
         </div>
     )
@@ -11,7 +11,7 @@ const Button = ({name,handleClicked}) => {
 
 const styles = {
     buttonStyle:{
-        width:"25%",
+        
         margin:"10px auto",
         padding:"8px",
         border: "1px solid black",

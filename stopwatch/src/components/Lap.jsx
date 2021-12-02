@@ -1,17 +1,23 @@
 import React from "react";
 
 const Lap = ({laps}) => {
-{console.log(laps);}
+// {console.log("laps " +laps);}
 return(<div>
-    <ul>
-    <li>One</li>
-    {/* {
+    <h1>Laps</h1>
+    <ol style={styles.lapStyle} >
+    
+    {
         laps.map((lap,idx) => {
         return <li key={idx}>{lap}</li>
-    })} */}
-    </ul>
+    })}
+    </ol>
     </div>);
 
 }
 
+const styles = {
+    lapStyle:{
+        // listStyle:"none"
+    }
+}
 export default Lap;
