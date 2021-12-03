@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import Button from "./Button";
+
 import Timer from "./Timer";
-import Lap from "./Lap";
 import ControlButtons from "./ControlButtons";
+import Lap from "./Lap";
+
 import './StopWatch.css';
 
 const StopWatch = function () {
@@ -11,7 +12,6 @@ const StopWatch = function () {
     const [active, setActive] = useState(false);
     const [pause, setPause] = useState(true)
     const [lapValues, setLapValues] = useState([]);
-
 
     useEffect(() => {
         let interval = null;
@@ -33,16 +33,14 @@ const StopWatch = function () {
         setPause(false)
     }
 
-    function stopTimer() {
-        // setActive(false);
+    function stopTimer() {        
         setPause(prev => !prev);
     }
 
     function resetTimer() { 
         setActive(false);
         setLapValues([]);
-        setTime(0);
-        
+        setTime(0);        
     }
 
     function captureLap() {
@@ -66,8 +64,7 @@ const StopWatch = function () {
         return hrs + ":" + mins + ":" + secs;
     }
     
-    return (
-       
+    return (       
         <div className="stop-watch">
             <div className="left-window">
                 <Timer time={formatTime(time)} />
@@ -83,10 +80,8 @@ const StopWatch = function () {
             <div className="right-window">
                 <Lap laps={[...lapValues]} />
             </div>
-        </div>
-       
+        </div>       
     )
 }
-
 
 export default StopWatch;

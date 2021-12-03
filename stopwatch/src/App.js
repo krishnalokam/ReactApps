@@ -1,13 +1,12 @@
 import './App.css';
 import Header from './components/Header';
-import StopWatch from './components/StopWatch.jsx';
+import StopWatch from './components/StopWatch';
 
 function App() {
   return (
     <div className="App">
-    <Header />
-     <StopWatch />
-     
+     <Header />
+     <StopWatch />     
     </div>
   );
 }

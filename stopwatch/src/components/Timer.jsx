@@ -6,5 +6,4 @@ const Timer = ({time}) => {
         <p className="timer"> {time}</p>
     )
 }
-
 export default Timer;
