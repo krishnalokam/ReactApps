@@ -3,7 +3,7 @@ import React  from "react";
 const ControlButtons = ({active,paused,startTimer,stopTimer,resetTimer,captureLap}) => {
 
     const startButton = (
-        <div onClick={startTimer}>
+        <div style={styles.btn} onClick={startTimer}>
             Start
         </div>
     )
@@ -30,6 +30,13 @@ const styles = {
         display:"flex",
         alignItems:"center",
         justifyContent:"space-around"
+    },
+
+    btn :{
+        borderRadius:"5px",
+        border:"3px solid blue",
+        alignSelf:"flex-end"
+
     }
 }
 

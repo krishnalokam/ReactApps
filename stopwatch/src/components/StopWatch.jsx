@@ -76,6 +76,7 @@ const StopWatch = function () {
         let hrs = Math.floor(totalSeconds / 3600);
         hrs = String(hrs).padStart(2, 0)
 
+        //getting the remaining seconds after hour calculation
         totalSeconds %= 3600;
 
         let mins = Math.floor(totalSeconds / 60);
@@ -86,12 +87,10 @@ const StopWatch = function () {
 
         return hrs + ":" + mins + ":" + secs;
     }
-
     
-
     return (<div>
         <Header />
-        <div style={styles.displayStyle}>
+        <div style={styles.stopWatch}>
             <div style={styles.leftWindow}>
                 <Timer time={formatTime(time)} />
                 <ControlButtons
@@ -115,38 +114,29 @@ const StopWatch = function () {
 }
 
 const styles = {
-    displayStyle: {
+    stopWatch: {
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
         width:"50%",
         margin:"auto",
-        
+        height:"300px"
     },
 
-    stopWatch :{
-        height: "85vh",
-        width: "23vw",
-        margin:"auto",
-        // backgroundColor: "#0d0c1b",
-        display: "flex",
-        // flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between"
-    },
-   
     leftWindow: {
-        flex: 1,
+        flex: "2",
         alignItems:"center",
         justifyContent:"center",
         border:"1px solid black",
+        height:"300px"
         // backgroundColor: "#0d0c1b",
     },
     rightWindow:{
-        flex: 1,
-        alignItems:"center",
-        justifyContent:"center",
+        flex: "1",
+        alignSelf:"flex-start",
+        justifyContent:"flex-start",
         border:"1px solid black",
+        margin:"10px"
         // backgroundColor: "#0d0c1b",
     }
 }
