@@ -1,43 +1,29 @@
 import React  from "react";
+import "./ControlButtons.css";
 
 const ControlButtons = ({active,paused,startTimer,stopTimer,resetTimer,captureLap}) => {
 
     const startButton = (
-        <div style={styles.btn} onClick={startTimer}>
+        <div className="btn" onClick={startTimer}>
             Start
         </div>
     )
     const ActiveButtons = (
-        <div style={styles.btnGroup}>
-            <div onClick={stopTimer}>
+        <div className="btn-group">
+            <div className="btn" onClick={stopTimer}>
                 {paused? "Resume":"Stop"}
             </div>
-            <div onClick={resetTimer}>
+            <div className="btn" onClick={resetTimer}>
                 Reset
             </div>
-           { (active && !paused )? (<div onClick={captureLap}>
+           { (active && !paused )? (<div className="btn" onClick={captureLap}>
                 Lap
             </div>): ""}
         </div>
     )
     return (
-        <div>{active? ActiveButtons : startButton}</div>
+        <div className="buttons">{active? ActiveButtons : startButton}</div>
     )
-}
-
-const styles = {
-    btnGroup :{
-        display:"flex",
-        alignItems:"center",
-        justifyContent:"space-around"
-    },
-
-    btn :{
-        borderRadius:"5px",
-        border:"3px solid blue",
-        alignSelf:"flex-end"
-
-    }
 }
 
 export default ControlButtons;

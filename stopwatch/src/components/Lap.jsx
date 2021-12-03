@@ -1,11 +1,12 @@
 import React from "react";
+import './Lap.css';
 
 const Lap = ({laps}) => {
 
-return(<div>
-    <h1>Laps</h1>
-    <div sytle={{height:"300px"}}> 
-    <ol style={styles.lapStyle} >
+return(<div  className="lap" >
+    <p className="title">Laps</p>    
+    <div  className="lap-values">
+    <ol  >
     
     {
         laps.map((lap,idx) => {
@@ -14,14 +15,6 @@ return(<div>
     </ol>
     </div>
     </div>);
-
 }
 
-const styles = {
-    lapStyle:{
-        // listStyle:"none"
-        overflow: "scroll",
-        height:"300px"
-    }
-}
 export default Lap;

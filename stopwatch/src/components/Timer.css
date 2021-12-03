@@ -1,0 +1,10 @@
+.timer {
+        /* flex:1; */
+        /* margin:auto; */
+        padding:8px;
+        /* border: 1px solid black; */
+        background:black;
+        border-radius: 5px;
+        color:red;
+        font-size:2rem;
+    }

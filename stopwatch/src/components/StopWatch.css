@@ -1,0 +1,25 @@
+.stop-watch  {
+    display: flex;
+    height: 70%;
+    width: 100%;
+    margin:auto;    
+    /* background-color:blueviolet ; */
+    /* flex-direction: column; */
+}
+
+.left-window {    
+    flex: 1.5;
+    /* background-color: lightblue; */
+    background-color: rgb(211, 139, 139);
+    display: flex;
+    flex-direction: column;
+}
+
+.right-window {
+    flex: 1;
+    background-color: white;
+    /* border:1px solid black; */
+   
+    /* overflow-y: scroll; */
+   
+}

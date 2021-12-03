@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Header from "./Header";
 // import Button from "./Button";
 import Timer from "./Timer";
 import Lap from "./Lap";
-import ControlButtons from "./ControlButtons"
+import ControlButtons from "./ControlButtons";
+import './StopWatch.css';
 
 const StopWatch = function () {
 
@@ -28,46 +28,24 @@ const StopWatch = function () {
         };
       }, [active, pause]);
 
-    function startTimer() {
-        console.log("Start Timer");
+    function startTimer() {       
         setActive(true);
         setPause(false)
     }
 
     function stopTimer() {
-        console.log("stopTimer");
         // setActive(false);
         setPause(prev => !prev);
     }
 
     function resetTimer() { 
-        console.log("resetting timer");
         setActive(false);
         setLapValues([]);
         setTime(0);
         
     }
 
-    // useEffect(()=>{
-        
-    //     return () => {
-    //         console.log("Active state changed to in useEffect "+active)
-    //         if(active){
-    //         setTime(0);
-    //     }
-    // }
-    // },[active])
-   
-    // setTimeout(() => {
-    //     if(active && pause===false){
-    //     console.log("setTimeout");
-    //     setTime(time + 1);
-    //     }
-    // }, 1000);
-
     function captureLap() {
-        
-        console.log("Capture Lap " + [...lapValues]);
         setLapValues([...lapValues, formatTime(time)])
     }
 
@@ -88,10 +66,10 @@ const StopWatch = function () {
         return hrs + ":" + mins + ":" + secs;
     }
     
-    return (<div>
-        <Header />
-        <div style={styles.stopWatch}>
-            <div style={styles.leftWindow}>
+    return (
+       
+        <div className="stop-watch">
+            <div className="left-window">
                 <Timer time={formatTime(time)} />
                 <ControlButtons
                     active = {active}
@@ -100,44 +78,15 @@ const StopWatch = function () {
                     stopTimer = {stopTimer}
                     resetTimer={resetTimer}
                     captureLap= {captureLap}
-                 />
-                {/* <Button name="Start" handleClicked={startTimer}  />
-                <Button name="Stop" handleClicked={stopTimer} />
-                <Button name="Reset" handleClicked={resetTimer} />
-                <Button name="Lap" handleClicked={captureLap} /> */}
+                 />                
             </div>
-            <div style={styles.rightWindow}>
+            <div className="right-window">
                 <Lap laps={[...lapValues]} />
             </div>
         </div>
-    </div>)
+       
+    )
 }
 
-const styles = {
-    stopWatch: {
-        display: "flex",
-        alignItems: "flex-start",
-        justifyContent: "flex-start",
-        width:"50%",
-        margin:"auto",
-        height:"300px"
-    },
 
-    leftWindow: {
-        flex: "2",
-        alignItems:"center",
-        justifyContent:"center",
-        border:"1px solid black",
-        height:"300px"
-        // backgroundColor: "#0d0c1b",
-    },
-    rightWindow:{
-        flex: "1",
-        alignSelf:"flex-start",
-        justifyContent:"flex-start",
-        border:"1px solid black",
-        margin:"10px"
-        // backgroundColor: "#0d0c1b",
-    }
-}
 export default StopWatch;

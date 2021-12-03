@@ -1,0 +1,25 @@
+.btn-group {
+    flex:1;
+    display:flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.buttons {
+    margin:65% 5px;     
+}
+
+.btn {
+    flex:1;       
+    border-radius:5px;
+    padding:10px;   
+    border:3px solid blue;
+    align-self:flex-end;
+    color:black;
+    background-color: burlywood;    
+}
+
+.btn:hover,
+.btn:active {
+    background-color: rgb(221, 130, 10)
+}
