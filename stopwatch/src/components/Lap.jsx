@@ -1,10 +1,7 @@
 import React from "react";
 import './Lap.css';
 
-const Lap = ({laps}) => {
-
-    return(
-            <div  className="lap" >
+const Lap = ({laps}) => <div  className="lap" >
                 <p className="title">Laps</p>    
                 <div  className="lap-values">
                     <ol  >    
@@ -14,7 +11,6 @@ const Lap = ({laps}) => {
                     </ol>
                 </div>
             </div>
-    );
-}
+    
 
 export default Lap;
