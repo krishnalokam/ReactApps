@@ -1,16 +1,16 @@
 import React from "react";
 import './Lap.css';
 
-const Lap = ({laps}) => <div  className="lap" >
+const Lap = ({laps, lapref}) => { 
+    return ( <div  className="lap" >
                 <p className="title">Laps</p>    
                 <div  className="lap-values">
-                    <ol  >    
-                        { laps.map((lap,idx) => { 
-                            return <li key={idx}>{lap}</li> })
-                        }
+                    <ol ref =  {lapref} >    
+                        { laps.map((lap,idx) =>  <li key={idx}>{lap}</li>)  }
                     </ol>
                 </div>
-            </div>
-    
+             </div>
+            )
+    }
 
 export default Lap;

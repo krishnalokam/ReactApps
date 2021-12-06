@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useRef } from "react";
 
 import Timer from "./Timer";
-import ControlButtons from "./ControlButtons";
+import Buttons from "./Buttons";
 import Lap from "./Lap";
 
 import './StopWatch.css';
@@ -13,9 +13,11 @@ const StopWatch = function () {
     const [pause, setPause] = useState(true)
     const [lapValues, setLapValues] = useState([]);
 
+    const lapref = useRef();
+
     useEffect(() => {
         let interval = null;
-      
+            
         if (active && pause === false) {
           interval = setInterval(() => {
             setTime((time) => time + 1);
@@ -24,7 +26,7 @@ const StopWatch = function () {
           clearInterval(interval);
         }
         return () => {
-          clearInterval(interval);
+          clearInterval(interval);         
         };
       }, [active, pause]);
 
@@ -68,17 +70,18 @@ const StopWatch = function () {
         <div className="stop-watch">
             <div className="left-window">
                 <Timer time={formatTime(time)} />
-                <ControlButtons
+                <Buttons
                     active = {active}
                     paused={pause}
                     startTimer={startTimer}
                     stopTimer = {stopTimer}
                     resetTimer={resetTimer}
                     captureLap= {captureLap}
+                    
                  />                
             </div>
             <div className="right-window">
-                <Lap laps={[...lapValues]} />
+                <Lap lapref = {lapref} laps={[...lapValues]} />
             </div>
         </div>       
     )
